@@ -353,22 +353,6 @@ sc config "wudfsvc" start=demand
 echo Service configuration finished.
 echo.
 
-:: -----------------------------------------------------------------
-::  Disable Memory Compression
-:: -----------------------------------------------------------------
-echo --- Memory Compression ---
-echo Disabling this is NOT recommended if you have <16 GB of RAM as it can decrease performance.
-echo To make it worse on my system I never see a performance boost by disbling it.
-echo But if you have enough free RAM so... yeah why not
-CHOICE /C YN /M "Are you sure you want to disable Memory Compression? [Y/N]:"
-IF ERRORLEVEL 2 GOTO SkipMemCompress
-IF ERRORLEVEL 1 (
-    echo Disabling Memory Compression...
-    powershell.exe -Command "Disable-MMAgent -MemoryCompression"
-)
-:SkipMemCompress
-echo.
-
 echo.
 echo ==========================================================
 echo =                     Script Finished                  =
@@ -391,4 +375,5 @@ IF ERRORLEVEL 1 (
 :End
 echo Script complete.
 pause
+
 ENDLOCAL
