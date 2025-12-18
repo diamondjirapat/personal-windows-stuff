@@ -1,4 +1,4 @@
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+# powershell -ExecutionPolicy Bypass -File .\winget.ps1
 
 function Get-WingetId {
     param ($inputString)
@@ -59,3 +59,4 @@ foreach ($app in $appsToInstall) {
 
 Write-Host "All apps processed." -ForegroundColor Cyan
 Write-Host "Script finished!" -ForegroundColor Green
+
