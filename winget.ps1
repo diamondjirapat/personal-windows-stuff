@@ -34,6 +34,7 @@ $appsRaw = @(
     "winget install --id=pizzaboxer.Bloxstrap  -e",
     "winget install --id=Canva.Affinity  -e",
     "Ytmdesktop.Ytmdesktop"
+    "winget install -e --id CI010.XMinecraftLauncher"
 )
 $appsToInstall = $appsRaw | ForEach-Object { Get-WingetId $_ }
 
@@ -59,4 +60,5 @@ foreach ($app in $appsToInstall) {
 
 Write-Host "All apps processed." -ForegroundColor Cyan
 Write-Host "Script finished!" -ForegroundColor Green
+
 
